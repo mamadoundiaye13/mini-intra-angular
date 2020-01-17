@@ -3,7 +3,7 @@ const noteModel = require('../models/noteModel');
 const Note = mongoose.model("Note");
 
 exports.get_all_notes = (req, res) => {
-  Note.find({post_id: req.params.post_id}, (error, posts) => {
+  Note.find({module_id: req.params.module_id}, (error, notes) => {
     if(error){
       res.status(500);
       console.log(error);
@@ -11,15 +11,16 @@ exports.get_all_notes = (req, res) => {
     }
     else {
       res.status(200);
-      res.json(posts);
+      res.json(notes);
     }
   })
 };
 
 exports.create_a_note = (req, res) => {
+  req.body.module_id = req.params.module_id;
   let new_note = new Note(req.body);
 
-  new_note.save((error, post) => {
+  new_note.save((error, note) => {
     if(error){
       res.status(500);
       console.log(error);
@@ -27,7 +28,7 @@ exports.create_a_note = (req, res) => {
     }
     else {
       res.status(201);
-      res.json(post);
+      res.json(note);
     }
   })
 };
