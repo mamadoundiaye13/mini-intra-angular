@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 let noteSchema = new Schema({
     etudiant_id: {
-      type: String,
-      require: "l'id de l'étudiant est requis"
+        type: String,
+        unique: true,
+        require: "l'id de l'étudiant est requis",
     },
     note: {
       type: String,
@@ -15,8 +16,9 @@ let noteSchema = new Schema({
       required: "Le message est requis"
     },
     module_id: {
-      type: String,
-      required: "le module est requis"
+        type: String,
+        unique: true,
+        required: "le module est requis"
     },
     created_note : {
       type: Date,
