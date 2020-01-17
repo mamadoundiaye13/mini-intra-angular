@@ -18,7 +18,7 @@ exports.user_register = (req, res) => {
     }
     else {
       user.hash_password = undefined;
-      //res.status(201);
+      res.status(201);
       return res.json(user);
     }
   })
@@ -53,13 +53,13 @@ exports.user_login = (req, res) => {
   })
   };
 
-exports.loginRequired = (req, res, next) => {
-  if (req.user) {
-      next();
-    } else {
-      return res.status(401).json({ message: 'Utilisateur non autorisé' });
-    }
-}
+// exports.loginRequired = (req, res, next) => {
+//   if (req.user) {
+//       next();
+//     } else {
+//       return res.status(401).json({ message: 'Utilisateur non autorisé' });
+//     }
+// }
  
 exports.list_all_users = (req, res) => {
   User.find({}, (error, users) => {
