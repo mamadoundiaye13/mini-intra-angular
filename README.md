@@ -21,3 +21,11 @@ ng server serve -o
 
 ## Project
 This is an example project. This is not secure to use.
+
+## Groupe : 
+BELKADI Thanina
+ROUX Julien
+NDIAYE Mamadou
+
+## Session 
+Architecture Web & Big Data (SQY)
