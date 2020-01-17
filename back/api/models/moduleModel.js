@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 let moduleSchema = new Schema({
   nom: {
     type: String,
-    require: "nom est requis"
+    require: "nom est requis",
+    unique: true,
   },
   intervenant_id: {
     type: String,
