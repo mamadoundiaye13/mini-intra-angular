@@ -4,7 +4,7 @@ module.exports = (app) => {
     const authadmin = require('../controllers/userController');
 
   
-    app.route('/notes') // req.params.post_id
+    app.route('/modules/module_id') // req.params.post_id
     .get(noteController.get_all_notes)
     .post(noteController.create_a_note);
   
