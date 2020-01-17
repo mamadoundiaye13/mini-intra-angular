@@ -8,6 +8,7 @@ let moduleSchema = new Schema({
   },
   intervenant_id: {
     type: String,
+    unique: true,
     require: "l'id intervenant est requis"
   },
   session_id : {

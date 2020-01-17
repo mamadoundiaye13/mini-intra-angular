@@ -18,7 +18,7 @@ exports.user_register = (req, res) => {
     }
     else {
       user.hash_password = undefined;
-      //res.status(201);
+      res.status(201);
       return res.json(user);
     }
   })
