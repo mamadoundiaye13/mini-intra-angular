@@ -4,10 +4,12 @@ const Schema = mongoose.Schema;
 let moduleSchema = new Schema({
   nom: {
     type: String,
-    require: "nom est requis"
+    require: "nom est requis",
+    unique: true,
   },
   intervenant_id: {
     type: String,
+    unique: true,
     require: "l'id intervenant est requis"
   },
   session_id : {
