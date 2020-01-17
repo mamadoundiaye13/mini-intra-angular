@@ -15,4 +15,3 @@ module.exports = (app) => {
     .put(authadmin.verify_token,noteController.update_a_note)
     .delete(authadmin.verify_token,noteController.delete_a_note);
   };
-g
