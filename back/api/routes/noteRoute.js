@@ -3,6 +3,7 @@ module.exports = (app) => {
     const jwtMiddleware = require('../middleware/jwtMiddleware');
     const authadmin = require('../middleware/jwtMiddleware');
 
+
     
     app.route('/notes/modules/:module_id') // req.params.post_id
     .get(noteController.get_all_notes)
@@ -14,3 +15,4 @@ module.exports = (app) => {
     .put(authadmin.verify_token,noteController.update_a_note)
     .delete(authadmin.verify_token,noteController.delete_a_note);
   };
+g
