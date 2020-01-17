@@ -10,8 +10,10 @@ exports.get_all_notes = (req, res) => {
       res.json({message: "Erreur serveur."});
     }
     else {
+      var somme = notes.reduce((a,b) => a+b);
+      var avg = somme/notes.length;
       res.status(200);
-      res.json(notes);
+      res.json(avg);
     }
   })
 };
